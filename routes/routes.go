@@ -20,6 +20,7 @@ func Setup() *gin.Engine {
 
 	// 游戏分类
 	apiRouter.GET("/category/", controller.Category)
+	apiRouter.GET("/list", controller.GameListAll)
 
 	return r
 }
