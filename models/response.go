@@ -11,3 +11,9 @@ type RespCategory struct {
 	Response
 	Categories []Category `json:"category"`
 }
+
+// RespGame 响应游戏列表功能
+type RespGame struct {
+	Response
+	Games []Game `json:"games"`
+}
