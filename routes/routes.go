@@ -19,8 +19,8 @@ func Setup() *gin.Engine {
 	apiRouter := r.Group("/webGame")
 
 	// 游戏分类
-	apiRouter.GET("/category/", controller.Category)
+	apiRouter.GET("/category", controller.Category)
 	apiRouter.GET("/list", controller.GameListAll)
-
+	apiRouter.GET("/list/:categoryID", controller.GameListPart)
 	return r
 }

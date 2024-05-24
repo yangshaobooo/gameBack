@@ -1,6 +1,6 @@
 package models
 
-type ReqGameListAll struct {
+type ReqGameList struct {
 	Page  int `form:"page"`
 	Limit int `form:"limit"`
 }
