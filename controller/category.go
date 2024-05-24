@@ -7,8 +7,8 @@ import (
 	"webGameBack/logic"
 )
 
+// Category 获取分类
 func Category(c *gin.Context) {
-	// 获取分类
 	res, err := logic.GetCategory()
 	if err != nil {
 		zap.L().Error("logic.GetCategory() failed", zap.Error(err))

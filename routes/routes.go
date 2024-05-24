@@ -2,7 +2,6 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
-	"net/http"
 	"webGameBack/controller"
 	"webGameBack/logger"
 	"webGameBack/middlewares"
@@ -11,16 +10,12 @@ import (
 func Setup() *gin.Engine {
 	r := gin.New()
 	r.Use(logger.GinLogger(), logger.GinRecovery(true), middlewares.CorsMiddleware())
-	r.GET("/", func(context *gin.Context) {
-		context.String(http.StatusOK, "ok")
-	})
 
-	// 游戏路由
+	// 设置路由组
 	apiRouter := r.Group("/webGame")
 
-	// 游戏分类
-	apiRouter.GET("/category", controller.Category)
-	apiRouter.GET("/list", controller.GameListAll)
-	apiRouter.GET("/list/:categoryID", controller.GameListPart)
+	apiRouter.GET("/category", controller.Category)             // 获取分类
+	apiRouter.GET("/list", controller.GameListAll)              // 获取游戏
+	apiRouter.GET("/list/:categoryID", controller.GameListPart) // 获取分类游戏
 	return r
 }

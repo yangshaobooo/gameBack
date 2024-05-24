@@ -17,4 +17,5 @@ type RespGame struct {
 	Response
 	Games        []Game `json:"games"`
 	GameCategory string `json:"game_category"`
+	Total        int    `json:"total"`
 }
