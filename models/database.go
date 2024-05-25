@@ -1,6 +1,9 @@
 package models
 
-import "time"
+import (
+	"encoding/json"
+	"time"
+)
 
 type Category struct {
 	CategoryID   string `db:"categoryID"`
@@ -19,4 +22,12 @@ type Game struct {
 	Price        uint8     `db:"price"`
 	Size         string    `db:"size"`
 	Introduce    string    `db:"introduce"`
+}
+
+type Detail struct {
+	GameID      string          `db:"gameID"`
+	Video       string          `db:"video"`
+	Picture     json.RawMessage `db:"picture"`
+	Description string          `db:"description"`
+	TitleGif    json.RawMessage `db:"titleGif"`
 }

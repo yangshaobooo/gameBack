@@ -59,3 +59,28 @@ func GameListPart(req *models.ReqGameList, categoryID string) (*models.RespGame,
 	}
 	return res, nil
 }
+
+// GameDetail 获取游戏详情
+func GameDetail(gameID string) (*models.RespDetail, error) {
+	// todo
+	// 查找该游戏的视频图片和介绍内容
+	detail, err := mysql.GameDetail(gameID)
+	if err != nil {
+		zap.L().Error("logic GameDetail mysql.GameDetail() failed", zap.Error(err))
+		return nil, err
+	}
+	game, err := mysql.GetGameByID(gameID)
+	if err != nil {
+		zap.L().Error("logic GameDetail mysql.GetGameByID() failed", zap.Error(err))
+		return nil, err
+	}
+	res := &models.RespDetail{
+		Response: models.Response{
+			StatusCode: 1,
+			StatusMsg:  "获取游戏详情成功",
+		},
+		Game:   *game,
+		Detail: *detail,
+	}
+	return res, nil
+}

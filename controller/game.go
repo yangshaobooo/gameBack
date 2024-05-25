@@ -45,3 +45,13 @@ func GameListPart(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, res)
 }
+
+func GameDetail(c *gin.Context) {
+	gameID := c.Param("gameID")
+	// 获取游戏详情
+	res, err := logic.GameDetail(gameID)
+	if err != nil {
+		zap.L().Error("controller logic.GameDetail failed", zap.Error(err))
+	}
+	c.JSON(http.StatusOK, res)
+}

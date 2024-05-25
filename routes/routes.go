@@ -17,5 +17,6 @@ func Setup() *gin.Engine {
 	apiRouter.GET("/category", controller.Category)             // 获取分类
 	apiRouter.GET("/list", controller.GameListAll)              // 获取游戏
 	apiRouter.GET("/list/:categoryID", controller.GameListPart) // 获取分类游戏
+	apiRouter.GET("/detail/:gameID", controller.GameDetail)
 	return r
 }

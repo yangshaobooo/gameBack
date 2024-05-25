@@ -19,3 +19,10 @@ type RespGame struct {
 	GameCategory string `json:"game_category"`
 	Total        int    `json:"total"`
 }
+
+// RespDetail 响应游戏详情
+type RespDetail struct {
+	Response
+	Game   `json:"game"`
+	Detail `json:"detail"`
+}
