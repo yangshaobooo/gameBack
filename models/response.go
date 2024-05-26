@@ -20,9 +20,22 @@ type RespGame struct {
 	Total        int    `json:"total"`
 }
 
+type TitleGifText struct {
+	Title string `json:"title"`
+	Gif   string `json:"gif"`
+	Text  string `json:"text"`
+}
+type DetailParse struct {
+	GameID      string         `json:"gameID"`
+	Video       string         `json:"video"`
+	Pictures    []string       `json:"pictures"`
+	Description string         `json:"description"`
+	TitleGifs   []TitleGifText `json:"titleGifs"`
+}
+
 // RespDetail 响应游戏详情
 type RespDetail struct {
 	Response
-	Game   `json:"game"`
-	Detail `json:"detail"`
+	Game        `json:"game"`
+	DetailParse `json:"detailParse"`
 }

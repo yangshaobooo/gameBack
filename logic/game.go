@@ -69,6 +69,7 @@ func GameDetail(gameID string) (*models.RespDetail, error) {
 		zap.L().Error("logic GameDetail mysql.GameDetail() failed", zap.Error(err))
 		return nil, err
 	}
+	parseDetail := ParseGameDetail(detail)
 	game, err := mysql.GetGameByID(gameID)
 	if err != nil {
 		zap.L().Error("logic GameDetail mysql.GetGameByID() failed", zap.Error(err))
@@ -79,8 +80,8 @@ func GameDetail(gameID string) (*models.RespDetail, error) {
 			StatusCode: 1,
 			StatusMsg:  "获取游戏详情成功",
 		},
-		Game:   *game,
-		Detail: *detail,
+		Game:        *game,
+		DetailParse: *parseDetail,
 	}
 	return res, nil
 }
