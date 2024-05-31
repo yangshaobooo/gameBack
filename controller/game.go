@@ -55,3 +55,13 @@ func GameDetail(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, res)
 }
+
+func Download(c *gin.Context) {
+	gameID := c.Param("gameID")
+	// 获取下载链接
+	res, err := logic.Download(gameID)
+	if err != nil {
+		zap.L().Error("controller Download logic.Download() failed", zap.Error(err))
+	}
+	c.JSON(http.StatusOK, res)
+}

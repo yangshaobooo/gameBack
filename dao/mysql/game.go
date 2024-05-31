@@ -70,3 +70,14 @@ func GetGameByID(gameID string) (*models.Game, error) {
 	}
 	return game, nil
 }
+
+// Download 根据id获取游戏下载链接
+func Download(gameID string) ([]models.Download, error) {
+	var downloadList []models.Download
+	str := `select gameID,link,source,position from download where gameID=?`
+	if err := db.Select(&downloadList, str, gameID); err != nil {
+		zap.L().Error("dao Download db.Select() failed", zap.Error(err))
+		return downloadList, err
+	}
+	return downloadList, nil
+}

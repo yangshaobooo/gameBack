@@ -62,8 +62,6 @@ func GameListPart(req *models.ReqGameList, categoryID string) (*models.RespGame,
 
 // GameDetail 获取游戏详情
 func GameDetail(gameID string) (*models.RespDetail, error) {
-	// todo
-	// 查找该游戏的视频图片和介绍内容
 	detail, err := mysql.GameDetail(gameID)
 	if err != nil {
 		zap.L().Error("logic GameDetail mysql.GameDetail() failed", zap.Error(err))
@@ -82,6 +80,22 @@ func GameDetail(gameID string) (*models.RespDetail, error) {
 		},
 		Game:        *game,
 		DetailParse: *parseDetail,
+	}
+	return res, nil
+}
+
+func Download(gameID string) (*models.RespDownload, error) {
+	downloadList, err := mysql.Download(gameID)
+	if err != nil {
+		zap.L().Error("logic Download mysql.Download() failed", zap.Error(err))
+		return nil, err
+	}
+	res := &models.RespDownload{
+		Response: models.Response{
+			StatusCode: 1,
+			StatusMsg:  "获取游戏详情成功",
+		},
+		Downloads: downloadList,
 	}
 	return res, nil
 }

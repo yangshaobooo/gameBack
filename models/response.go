@@ -39,3 +39,9 @@ type RespDetail struct {
 	Game        `json:"game"`
 	DetailParse `json:"detailParse"`
 }
+
+// RespDownload 响应下载
+type RespDownload struct {
+	Response
+	Downloads []Download `json:"downloads"`
+}

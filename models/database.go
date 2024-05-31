@@ -31,3 +31,10 @@ type Detail struct {
 	Description string          `db:"description"`
 	TitleGif    json.RawMessage `db:"titleGif"`
 }
+
+type Download struct {
+	GameID   string `db:"gameID"`
+	Link     string `db:"link"`
+	Source   string `db:"source"`
+	Position int    `db:"position"`
+}
