@@ -38,3 +38,12 @@ type Download struct {
 	Source   string `db:"source"`
 	Position int    `db:"position"`
 }
+
+type User struct {
+	UserID   int64     `db:"user_id"`
+	Username string    `db:"username"`
+	Password string    `db:"password"`
+	Email    string    `db:"email"`
+	Flag     int8      `db:"flag"`    // 是否是会员
+	EndTime  time.Time `db:"endTime"` // 会员到期时间
+}

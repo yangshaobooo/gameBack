@@ -45,3 +45,12 @@ type RespDownload struct {
 	Response
 	Downloads []Download `json:"downloads"`
 }
+
+// RespLogin 响应登录
+type RespLogin struct {
+	Response
+	UserID   int64  `json:"user_id"`
+	Username string `json:"username"`
+	Token    string `json:"token"`
+	Permit   int8   `json:"permit"`
+}

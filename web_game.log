@@ -374,3 +374,39 @@
 {"level":"INFO","time":"2024-05-31T16:08:49.478+0800","caller":"logger/logger.go:68","msg":"/webGame/detail/99956","status":200,"method":"GET","path":"/webGame/detail/99956","query":"","ip":"::1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36","errors":"","cost":0.1145093}
 {"level":"INFO","time":"2024-05-31T16:09:55.452+0800","caller":"webGameBack/main.go:66","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2024-05-31T16:09:55.462+0800","caller":"webGameBack/main.go:75","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-06-05T23:25:24.932+0800","caller":"webGameBack/main.go:34","msg":"logger init success..."}
+{"level":"INFO","time":"2024-06-05T23:25:35.236+0800","caller":"webGameBack/main.go:66","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-06-05T23:25:35.237+0800","caller":"webGameBack/main.go:75","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-06-10T21:10:01.807+0800","caller":"webGameBack/main.go:34","msg":"logger init success..."}
+{"level":"INFO","time":"2024-06-10T21:10:14.480+0800","caller":"controller/user.go:27","msg":"用户登录成功","account":""}
+{"level":"INFO","time":"2024-06-10T21:10:14.480+0800","caller":"logger/logger.go:68","msg":"/webGame/login","status":200,"method":"POST","path":"/webGame/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.39.0","errors":"","cost":0.0211538}
+{"level":"INFO","time":"2024-06-10T21:12:04.473+0800","caller":"webGameBack/main.go:66","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-06-10T21:12:04.475+0800","caller":"webGameBack/main.go:75","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-06-10T21:12:09.981+0800","caller":"webGameBack/main.go:34","msg":"logger init success..."}
+{"level":"ERROR","time":"2024-06-10T21:12:16.727+0800","caller":"logic/user.go:16","msg":"mysql.Login() failed","error":"该用户不存在"}
+{"level":"ERROR","time":"2024-06-10T21:12:16.727+0800","caller":"controller/user.go:24","msg":"logic.Login() error","error":"该用户不存在"}
+{"level":"INFO","time":"2024-06-10T21:12:16.727+0800","caller":"logger/logger.go:68","msg":"/webGame/login","status":200,"method":"POST","path":"/webGame/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.39.0","errors":"","cost":0.0376001}
+{"level":"ERROR","time":"2024-06-10T21:16:06.316+0800","caller":"logic/user.go:16","msg":"mysql.Login() failed","error":"该用户不存在"}
+{"level":"ERROR","time":"2024-06-10T21:16:06.316+0800","caller":"controller/user.go:24","msg":"logic.Login() error","error":"该用户不存在"}
+{"level":"INFO","time":"2024-06-10T21:16:06.316+0800","caller":"logger/logger.go:68","msg":"/webGame/login","status":200,"method":"POST","path":"/webGame/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.39.0","errors":"","cost":0.0359669}
+{"level":"INFO","time":"2024-06-10T21:18:14.173+0800","caller":"webGameBack/main.go:66","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-06-10T21:18:14.174+0800","caller":"webGameBack/main.go:75","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-06-10T21:18:19.055+0800","caller":"webGameBack/main.go:34","msg":"logger init success..."}
+{"level":"ERROR","time":"2024-06-10T21:18:34.622+0800","caller":"logic/user.go:16","msg":"mysql.Login() failed","error":"该用户不存在"}
+{"level":"ERROR","time":"2024-06-10T21:18:34.623+0800","caller":"controller/user.go:24","msg":"logic.Login() error","error":"该用户不存在"}
+{"level":"INFO","time":"2024-06-10T21:18:34.623+0800","caller":"logger/logger.go:68","msg":"/webGame/login","status":200,"method":"POST","path":"/webGame/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.39.0","errors":"","cost":0.0354153}
+{"level":"ERROR","time":"2024-06-10T21:18:40.651+0800","caller":"logic/user.go:16","msg":"mysql.Login() failed","error":"该用户不存在"}
+{"level":"ERROR","time":"2024-06-10T21:18:40.651+0800","caller":"controller/user.go:24","msg":"logic.Login() error","error":"该用户不存在"}
+{"level":"INFO","time":"2024-06-10T21:18:40.651+0800","caller":"logger/logger.go:68","msg":"/webGame/login","status":200,"method":"POST","path":"/webGame/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.39.0","errors":"","cost":0.0354438}
+{"level":"INFO","time":"2024-06-10T21:25:27.154+0800","caller":"webGameBack/main.go:66","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-06-10T21:25:27.156+0800","caller":"webGameBack/main.go:75","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-06-10T21:25:49.129+0800","caller":"webGameBack/main.go:34","msg":"logger init success..."}
+{"level":"INFO","time":"2024-06-10T21:25:57.385+0800","caller":"controller/user.go:27","msg":"用户登录成功","account":"晴天"}
+{"level":"INFO","time":"2024-06-10T21:25:57.385+0800","caller":"logger/logger.go:68","msg":"/webGame/login","status":200,"method":"POST","path":"/webGame/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.39.0","errors":"","cost":0.0420766}
+{"level":"INFO","time":"2024-06-10T21:26:54.227+0800","caller":"webGameBack/main.go:66","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-06-10T21:26:54.230+0800","caller":"webGameBack/main.go:75","msg":"Server exiting"}
+{"level":"DEBUG","time":"2024-06-10T21:29:46.523+0800","caller":"webGameBack/main.go:34","msg":"logger init success..."}
+{"level":"INFO","time":"2024-06-10T21:29:55.018+0800","caller":"controller/user.go:27","msg":"用户登录成功","account":"晴天"}
+{"level":"INFO","time":"2024-06-10T21:29:55.018+0800","caller":"logger/logger.go:68","msg":"/webGame/login","status":200,"method":"POST","path":"/webGame/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.39.0","errors":"","cost":0.043772}
+{"level":"INFO","time":"2024-06-10T21:31:47.328+0800","caller":"webGameBack/main.go:66","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-06-10T21:31:47.328+0800","caller":"webGameBack/main.go:75","msg":"Server exiting"}
