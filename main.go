@@ -11,43 +11,23 @@ import (
 	"os/signal"
 	"syscall"
 	"time"
-	"webGameBack/dao/mysql"
-	"webGameBack/logger"
+	"webGameBack/config"
 	"webGameBack/routes"
-	"webGameBack/settings"
 )
 
 //Go web开发较通用的脚手架
 
 func main() {
-	//1、加载配置
-	if err := settings.Init(); err != nil {
-		fmt.Printf("Init settings failed,err:%v\n", err)
-		return
-	}
-	//2、初始化日志
-	if err := logger.Init(); err != nil {
-		fmt.Printf("Init logger failed,err:%v\n", err)
-		return
-	}
-	defer zap.L().Sync()
-	zap.L().Debug("logger init success...")
-	//3、初始化MySql的连接
-	if err := mysql.Init(); err != nil {
-		fmt.Printf("Init mysql failed,err:%v\n", err)
-		return
-	}
-	defer mysql.Close()
-	//4、redis后期再加入
-	//5、注册路由
+	// 1、初始化配置服务
+	config.InitAllConfig()
+	// 2、注册路由
 	r := routes.Setup()
 
-	//6、启动服务（优雅关机）
+	// 3、启动服务（优雅关机）
 	srv := &http.Server{
 		Addr:    fmt.Sprintf(":%d", viper.GetInt("app.port")),
 		Handler: r,
 	}
-
 	go func() {
 		// 开启一个goroutine启动服务
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {

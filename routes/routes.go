@@ -19,6 +19,7 @@ func Setup() *gin.Engine {
 	apiRouter.GET("/list/:categoryID", controller.GameListPart) // 获取分类游戏
 	apiRouter.GET("/detail/:gameID", controller.GameDetail)     // 获取游戏详情
 	apiRouter.GET("/download/:gameID", controller.Download)     // 获取下载链接
-	apiRouter.POST("/login", controller.Login)
+	apiRouter.POST("/login", controller.Login)                  //登录
+	apiRouter.POST("/register", controller.Register)            // 注册
 	return r
 }

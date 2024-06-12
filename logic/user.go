@@ -5,6 +5,7 @@ import (
 	"time"
 	"webGameBack/dao/mysql"
 	"webGameBack/middlewares/jwt"
+	"webGameBack/middlewares/snowflake1"
 	"webGameBack/models"
 )
 
@@ -39,4 +40,27 @@ func Login(p *models.ReqLogin) (*models.RespLogin, error) {
 		Permit:   permit,
 	}
 	return res, nil
+}
+
+// Register 处理注册逻辑
+func Register(p *models.ReqRegister) (*models.Response, error) {
+	resp := &models.Response{StatusCode: 0, StatusMsg: "注册失败"}
+	// 1、判断用户名是否在数据库中已经存在
+	if err := mysql.CheckUserExist(p.Username); err != nil {
+		zap.L().Error("用户已经存在", zap.Error(err))
+		resp.StatusMsg = "用户名已经存在"
+		return resp, err
+	}
+	// 2、为新用户生成唯一id
+	userID := snowflake1.GenID()
+
+	// 3、用户数据插入数据库
+	if err := mysql.InsertUser(p, userID); err != nil {
+		zap.L().Error("Register mysql.InsertUser() failed", zap.Error(err))
+		return resp, err
+	}
+	// 4、返回注册成功
+	resp.StatusCode = 1
+	resp.StatusMsg = "注册成功"
+	return resp, nil
 }

@@ -24,3 +24,26 @@ func Login(p *models.ReqLogin) (*models.User, error) {
 	// 3、返回用户信息
 	return user, nil
 }
+
+// CheckUserExist 判断用户是否存在
+func CheckUserExist(username string) error {
+	sqlStr := `select count(username) from user where username=?`
+	var count int
+	if err := db.Get(&count, sqlStr, username); err != nil {
+		return err
+	}
+	if count > 0 {
+		return errors.New("账号已经存在")
+	}
+	return nil
+}
+
+// InsertUser 插入用户信息
+func InsertUser(p *models.ReqRegister, userID int64) error {
+	sqlStr := `insert into user (user_id,username,password,email,flag)values(?,?,?,?,0)`
+	_, err := db.Exec(sqlStr, userID, p.Username, p.Password, p.Email)
+	if err != nil {
+		return err
+	}
+	return nil
+}
